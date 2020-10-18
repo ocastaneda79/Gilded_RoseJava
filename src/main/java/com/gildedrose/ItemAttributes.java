@@ -55,7 +55,14 @@ public class ItemAttributes {
 	
 	
 	public void updateQuality (Item item) {
+		
 		decreaseQuality(item);
+		
+		if(item.sellIn<0) {
+    		//if sell date passed, quality degrades x2
+        	decreaseQuality(item);
+    		
+    	}
 	
 	}
 	
