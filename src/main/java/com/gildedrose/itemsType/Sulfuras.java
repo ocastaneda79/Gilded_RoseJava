@@ -13,14 +13,14 @@ public class Sulfuras extends ItemAttributes {
 	
 	
 	public void updateQuality (Item item) {		
-		super.setQualityValue(item, 80);
+		//super.setQualityValue(item, 80);
 	}
 	
 
 	
 	public void updateSellIn(Item item) {
 		//Sulfuras never has to be sold
-		super.setSellIn(item, 999);
+		//super.setSellIn(item, 999);
 		
 		
 	}
