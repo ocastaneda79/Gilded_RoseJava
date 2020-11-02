@@ -1,18 +1,22 @@
 package com.gildedrose;
 
-
-import java.util.*;
-
-
 public class QualityStrategyFactory {
-    private IUpdate[] StrategyList;
+
+    private IUpdate[] strategyList;
 
     public QualityStrategyFactory() {
-        this.StrategyList = new IUpdate[]{
-                new BrieStrategy(),
-                new RegularStrategy(),
+        this.strategyList = new IUpdate[]{
+            new BrieStrategy(),
 
         };
+
     }
 
+    public IUpdate ApplyStrategy(Item item){
+        for (IUpdate update: strategyList) {
+            if(update.Apply(item)==true)
+                    return update;
+        }
+        return new RegularStrategy();
+    }
 }
